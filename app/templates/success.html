@@ -12,18 +12,17 @@
         .container{
             margin: auto;
             width: 40%;
-            border: 3px solid black;
             padding: 25px;
-            margin-top: 2%;
+            margin-top: 15%;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <form method="post">
-            {%csrf_token%}
-            {{form}}
-            <br><center><button type="Submit" class="btn btn-outline-primary"> Register</button></center>
+        <center><h1>Generation Successful</h1></center>
+        <form action="{%url 'resume_list'%}" ><br>
+            <button class="btn btn-outline-primary" name="resume_list">Resume-list</button>
         </form>
     </div>
 </body>

@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
+
 @login_required
 def index(request):
     if request.method=='POST':
@@ -29,7 +30,8 @@ def index(request):
             project = project
         )
         pr1.save()
-        return HttpResponse('Generation successful')
+        context={}
+        return render(request,'success.html',context)
     context={
         "form" : resume_form()
     }
@@ -48,7 +50,7 @@ def view_resume(request, id):
         "project" : pr_details.project
     }
     return render(request,'display.html',context)
-
+@login_required
 def download(request,id):
     pr_details=profile.objects.get(id=id)
     context={

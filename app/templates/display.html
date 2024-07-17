@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display Resume</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <style>
+        body{
+            background-image: linear-gradient(to right,rgb(196, 243, 126),rgb(246, 102, 246));
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <center><h1>Resume</h1></center>
+        <br><center><h1>Resume</h1></center><br>
         <h2>Name : {{name}}</h2>
         <h2>Email : {{email}}</h2>
         <hr>
@@ -22,7 +27,7 @@
         <h3>Project : </h3>
         <p>{{project}}</p>
         <form action="{% url 'download' id=id %}">
-            <button type="submit" class="btn btn-primary" >Download Resume</button>
+            <button type="submit" class="btn btn-outline-primary" >Download Resume</button>
         </form>
     </div>
 </body>

@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <style>
+        .container{
+            margin: auto;
+            width: 40%;
+            border: 3px solid black;
+            padding: 35px;
+            text-align: center;
+            margin-top: 12%;
+            margin-left: 50%;
+        }
+        h1{
+            margin: auto;
+            width: 40%;
+            position: absolute;
+            left: 50px;
+            padding: 10px;
+            margin-top: 5%;
+        }
+        button{
+            width: 100%;
+        }
+        body{
+            background-image: linear-gradient(to right,rgb(196, 243, 126),rgb(246, 102, 246));
+        }
+    </style>
 </head>
 <body>
-    <form method="post">
+    <h1>"Craft Your Perfect Resume in Minutes – Stand Out, Get Hired!"</h1>
+    <div class="container">
+        <form method="post">
         {%csrf_token%}
-        {{form}}
-        <button type="submit" class="btn btn-primary">Login</button>
+        {{form}}<br>
+        <button type="submit" class="btn btn-outline-primary">Login</button>
         {%if messages%}
         {% for message in messages%}
         <script>
@@ -20,7 +47,8 @@
         {%endif%}
     </form><br>
     <form action="{% url 'register' %}">
-        <button type="submit" class="btn btn-primary">Sign up</button>
+        <button type="submit" class="btn btn-outline-primary" >Sign up</button>
     </form>
+    </div>
 </body>
 </html>
